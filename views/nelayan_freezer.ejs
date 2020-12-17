@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freeze Nelayan</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <%- include('partials/navbar', {pageName : 'Freezer Nelayan List'})%>
+  <br><br><br>
+              <!-- Main jumbotron for a primary marketing message or call to action -->
+              <div class="jumbotron">
+                <div class="container">
+                  <h1 class="display-3"><%= data.namaIkan %></h1>
+                  <p>Ikan Tersebut Didapat Langsung Oleh Nelayan Kami</p>
+                </div>
+                <a href="/freezer"><button type="button" class="btn btn-primary">Tampilkan Semua Freeze</button></a>
+              </div>
+
+  <div class ="container">
+  <h1>Daftar Freezer</h1>
+  <br><br><br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th style="text-align:center">Nelayan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.Nelayans.forEach(element => { %>
+        <tr>
+          <td><%= element.namaNelayan %></td>
+        </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freezer List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <%- include('partials/navbar', {pageName : 'Freezer List'})%>
+  <div class ="container">
+  <h1>Freezer List</h1>
+  <br><br><br>
+  <a href="/freezer/add"><button type="button" class="btn btn-primary">Add Freezer</button></a>
+  <br><br><br>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+          <th style="text-align:center">Nama Freezer</th>
+          <th style="text-align:center">Stock Ikan</th>
+          <th style="text-align:center">Action</th>
+        </tr>
+    </thead>
+      <tbody>
+        <% data.forEach(element => { %>
+          <tr>
+            <td style="text-align:center"><%=element.namaIkan%></td>
+            <td style="text-align:center"><%=element.stockIkan %></td>
+            <td style="text-align:center">  
+              <a href="/freezer/edit/<%=element.id%>"><button type="button" class="btn btn-info btn-sm">Edit Freezer</button></a> 
+              <a href="/freezer/delete/<%=element.id%>"><button type="button" class="btn btn-info btn-sm">Hapus Freezer</button></a>
+              <a href="/freezer/nelayan/add/<%=element.id%>"><button type="button" class="btn btn-info btn-sm">Tambah Nelayan</button></a>
+              <a href="/freezer/nelayan/<%=element.id%>"><button type="button" class="btn btn-info btn-sm">Tampilkan Nelayan</button></a>
+            </td>
+          </tr>
+          <% })  %>
+        </tbody>   
+        </table>
+      </div>
+    <%- include('partials/footer')%>
+  </body>
+  </html>

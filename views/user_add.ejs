@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Freezer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+  <h1>Tambah User</h1>
+  <a href="/user"><button type="button" class="btn btn-info btn-sm">Tampilkan Semua User</button></a>
+  <form action="/user/add" method="post">
+
+    <label for="username" id="username" name="username" >username</label><br>
+    <input type="text" id="username"  name="username"  size="20" class="form-control" placeholder="e.g: Dzaky Ridho"><br><br>
+    <label for="password" id="password" name="password" >password</label><br>
+    <input type="password" id="password"  name="password"  size="20" class="form-control" placeholder="e.g: 123Street$"><br><br>
+    <label for="role" id="role" name="role" >role</label><br>
+    <input type="text" id="role"  name="role"  size="20" class="form-control" placeholder="e.g: admin"><br><br>
+    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+    <input type="button" class="btn btn-primary btn-sm" value="Cancel" onclick="location='/nelayan'">
+  </form>
+  </div>
+
+  <%- include('partials/footer')%>
+</body>
+<% if (errors) { %>
+    <% errors.forEach (e => { %>
+      <p style="color: red;"><%= e %></p>
+    <% }) %>
+<% } %>
+</html> 

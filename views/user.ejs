@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+<body>
+  <%- include('partials/navbar', {pageName : 'User List'})%>  
+  <div class ="container"></div>
+  <h1>User List</h1>
+  <br><br><br>
+  <a href="/user/add"><button type="button" class="btn btn-primary">Add User</button></a>
+  <br><br><br>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th style="text-align:center">Username</th>
+          <th style="text-align:center">Role</th>
+          <th style="text-align:center">Action</th>
+        </tr>
+      </thead>
+        <tbody>
+          <% data.forEach(element => { %>
+            <tr>
+              <td style="text-align:center"><%=element.username%></td>
+              <td style="text-align:center"><%=element.role%></td>
+              <td style="text-align:center">
+                   <a href="/user/edit/<%=element.id%>"><button type="button" class="btn btn-info btn-sm">Edit User</button></a> 
+                   <a href="/user/delete/<%=element.id%>"><button type="button" class="btn btn-info btn-sm">Delete User</button></a>
+              </td>
+            </tr>
+          <% })  %>
+        </tbody>
+      </table>
+    </div>
+  <%- include('partials/footer')%>
+</body>
+</html>

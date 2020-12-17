@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Nelayan</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+  <h1>Tambah Nelayan</h1>
+  <a href="/nelayan"><button type="button" class="btn btn-info btn-sm">Tampilkan Data Nelayan</button></a>
+  <form action="/nelayan/add" method="post">
+
+    <label for="namaNelayan" id="namaNelayan" name="namaNelayan" >PT Nelayan</label><br>
+    <input type="text" id="namaNelayan"  name="namaNelayan"  size="20" class="form-control" placeholder="e.g: PT. Alam Samudra"><br><br>
+    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+    <input type="button" class="btn btn-primary btn-sm" value="Cancel" onclick="location='/nelayan'">
+  </form>
+  </div>
+</body>
+</html> 
